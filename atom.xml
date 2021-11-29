@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="https://github.com/xggggaa/xggggaa.github.io.git/atom.xml" rel="self"/>
+  <link href="https://xggggaa.github.io/atom.xml" rel="self"/>
   
-  <link href="https://github.com/xggggaa/xggggaa.github.io.git/"/>
+  <link href="https://xggggaa.github.io/"/>
   <updated>2021-11-28T15:54:16.371Z</updated>
-  <id>https://github.com/xggggaa/xggggaa.github.io.git/</id>
+  <id>https://xggggaa.github.io/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/xggggaa/xggggaa.github.io.git/2021/11/28/hello-world/"/>
-    <id>https://github.com/xggggaa/xggggaa.github.io.git/2021/11/28/hello-world/</id>
+    <link href="https://xggggaa.github.io/2021/11/28/hello-world/"/>
+    <id>https://xggggaa.github.io/2021/11/28/hello-world/</id>
     <published>2021-11-28T15:54:16.371Z</published>
     <updated>2021-11-28T15:54:16.371Z</updated>
     
