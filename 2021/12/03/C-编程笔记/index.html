@@ -5,10 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="C++编程笔记, JJH">
-    <meta name="description" content="C++基础：
-/*生成随机数！！！
-调用rand()将生成一个介于0和RAND_MAX之间的随机整数(RAND_MAX是一个与实现有关的常量)，再次调用rand()会得到一个不同的数字。
-rand函数在&amp;lt;cstdlib&amp;gt;头文件中">
+    <meta name="description" content="C++基础：aaa
+程序的内存模型：
+1、内存分区模型
+·代码区：存放函数体的二进制代码，由操作系统进行管理的
+        存放CPU执行的机器命令
+        代码区是共享的，共享的目的是对于频繁被执行的程序，只需要在内存中由一份">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -490,172 +492,8 @@ rand函数在&amp;lt;cstdlib&amp;gt;头文件中">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="C-基础："><a href="#C-基础：" class="headerlink" title="C++基础："></a>C++基础：</h2><pre><code>
-/*生成随机数！！！
-调用rand()将生成一个介于0和RAND_MAX之间的随机整数(RAND_MAX是一个与实现有关的常量)，再次调用rand()会得到一个不同的数字。
-rand函数在&lt;cstdlib&gt;头文件中声明。
-使用srand()函数设置种子，通常会设置srand(time(0));但应声明time函数的头文件：&lt;ctime&gt;。就可以生成一个真正意义上的随机数。
-*/
-/*ASCII码！！！
-cout&lt;&lt;(int)&#39;A&#39;&lt;&lt;endl;//65~90
-cout&lt;&lt;(int)&#39;a&#39;&lt;&lt;endl;//97~122
-cout&lt;&lt;(int)&#39;0&#39;&lt;&lt;endl;//48~57
-*/
-/*sentinel！！！
-sentinel提供了一种将文件链接到程序输入方法，例如: sentinel &lt; numbers.txt 执行该程序，则程序的输入指令将不再期待从键盘输入。所有输入命令都从文件numbers.txt中获取输入，这一过程称为&#39;输入重定向&#39;。
-还可以重定向输出。例如：sentinel &lt; numbers.txt &gt; output.txt 文件output.txt将包含输入提示和输出。
-*/
-/*最大最小值！！！
-max和min函数，运用时加上头文件##include&lt;algorithm&gt;
-*/
-/*成员函数！！！
-许多C++函数要求使用点记号，这些函数称为成员函数。
-length函数是用点记号调用的，写下需要获取长度的字符串，然后写一个句点，再写函数名，随后再写一对括号， int n = name.length();
-substr成员函数在有了字符串的条件下可以提取子串。例如：string str1=&quot;hello,world!&quot;;string str2 = str.substr(0,5);则输出hello,，若为(7,5)则输出world;若输出(7)则会输出orld!；
-fail成员函数，可以测试输入失败的状态；
-str.find(ss)//返回字符串ss在str中的位置
-str.find(ss,num) //在str[num]~str[n-1]范围内查找并返回字符串ss在str的位置(num为位置，n为字符串的长度.)
-str.rfind(ss,num)在str[0]~str[num]范围内查找并返回字符串ss在str的位置（reverse）
-str.find_first_of(str,pos)//查找第一个出现的位置
-str.find_last_of(str,pos)//查找最后一个出现的位置
-*/
-/*幂运算和求根运算及其他运算！！！
-要运用幂运算和求根运算及其他运算，必须输入头文件##include&lt;cmath&gt;
-用一个数的平方根要用sqrt函数，例如，√x写为sqrt(x),要计算x^n（x的n次幂），应写作pow(x,n)
-其他数学函数：sin(x),cos(x),tan(x),log(x)[这个运算的是x的自然对数],log10(x)[这个运算的是以10为底，x的对数],abs(x)[计算的是x的绝对值]。
-有时候所运用的函数的头文件不是cmath,例如是cstdlib，则需要找到该函数的头档,最好使用开发环境的联机帮助或因特网上的参考网站，例如http://cplusplus.com。
-*/
-/*舍入误差！！！
-使用浮点数计算时，例如定义：double a = 4.35;cout&lt;&lt;a*100;则会输出434，这是由于机器是以二进制计数，而二进制数字丢失导致输出有误差，若要避免误差，则要cout&lt;&lt;a*100+0.5
-*/
-/*科学计数法！！！
-在浮点型中float,double可用科学计数法，例如double a = 2.96E-2或2.96e-2;即表示2.96*10的负二次方
-*/
-/*强制类型转换！！！
-若要把double类型的数据转换为int类型，例如 double price = 4.35; int cents = static_cast&lt;int&gt;(cast*100+0.5);
-static_cast:用于非多态类型转换(静态转换)，任何标准转换都可以用它，但是不能用于两个不相关的类型转换。
-reinterpret_cast:将一种类型转换为另一种不同的类型。
-*/
-/*小数和有效数字！！！
-fixed和setprecision和setw称为格式控制符。使用格式控制符，必须加头文件##include&lt;iomanip&gt;。
-例如cout&lt;&lt;fixed&lt;&lt;setprecision(3)&lt;&lt;a;即表示变量a输出的值要保留3位小数；
-cout&lt;&lt;setprecision(3)&lt;&lt;a;即表示变量a输出的值要保留三位有效数字；
-cout&lt;&lt;setw(8)&lt;&lt;a;即表示变量a输出的值会输出等于8个位置的值，若a有4位，则会在a前补上4个空格，若a有8位以上，则仍输出a。
-/*递增递减！！！
-前置递增：++a；先让变量+1，然后进行表达式运算。
-后置递增：a++；先进行表达式运算，再让变量+1。
-前置递减：--a
-后置递减：a--
-*/
-/*字符型！！！
-char ch=&#39;a&#39;;字符型若输入(int)ch;则会查出a的ASCII码
-*/
-/*字符串型！！！
-C风格字符串：char* 字符名[] =&quot; 字符串名 &quot;;
-C++风格字符串：string 变量名=“ 字符串名 ”;（C++风格字符串若要定义使用，要加头文件##include&lt;string&gt;）
-连接两个字符串应该用：string str1 = &quot;hello&quot;; string str2= str1 + &quot; C &quot;;而不能写：string str2 = &quot;hello&quot; + &quot;C&quot;;
-对于C字符串的补充：
-在&lt;cstring&gt;头文件下可以用：（s和t是字符数组，n是整数）
-strlen(s)：返回s的长度
-strcpy（t，s）：把s中的字符复制到t中
-strncpy（t，s，n）：至多复制s中的n个字符到t
-strcat（t，s）：将s中的字符追加到t的结尾
-strncat（t，s，n）：将之多n个s中的字符追加到t的末尾
-strcmp（t，s）：如果s和t的内容相同，则返回0，如果按照字典顺序s在t之前，则返回一个负整数，否则返回一个正整数
-在&lt;cstdlib&gt;头文件下：
-char year[]= &quot;2020&quot;;
-int y = atoi(year);
-y= 2020;
-如果s是一个字符串，那么s.c_str()生成一个指向字符串中字符的char*指针
-在&lt;cctype&gt;头文件下：
-toupper将小写字母转换成大写，而tolower则相反。
-char a = &#39;a&#39;;
-char c = toupper(a);
-*/
-/*布尔类型！！！
-bool a=true;  a = false;
-*/
-/*三目运算符！！！
-表达式1?表达式2:表达式3;(判断表达式一是否成立，若成立执行表达式2，否则执行表达式3)
-*/
-/*switch语句！！！
-switch(表达式)
-&#123;
-case 结果一: 执行语句;break;
-case 结果二:执行语句;break;
-...
-...
-...
-default:执行语句;break;
-&#125;
-*/
-/*跳转语句！！！
-break: 跳出本循环，执行循环之后的语句；
-continue: 跳过本次循环中余下尚未执行的语句，继续执行下一次循环；
-goto: goto a; a:  直接跳过了中间的语句。
-*/
-/*数组！！！
-一维数组：
-1.数据类型 数组名[数组长度];2.数据类型 数组名[数组长度]=&#123;数据1,数据2...&#125;;3.数据类型 数组名[]=&#123;数据1,数据2...&#125;;
-二维数组:
-1.数据类型 数组名[行数][列数];2.数据类型 数组名[行数][列数]=&#123;&#123;数据1,数据2&#125;,&#123;数据3,数据4&#125;&#125;;3.数据类型 数组名[行数][列数]=&#123;数据1,数据2,数据3,数据4&#125;;4.数据类型 数组名[][列数]=&#123;数据1,数据2,数据3,数据4&#125;;
-*/
-/*函数！！！
-函数的定义：
-1.返回值类型；2.函数名；3.参数表列；4.函数体语句；5.return 表达式；
-函数的常见形式；
-1.无参无返
-void test1()&#123;&#125;;输出只需要输入test1()即可输出该函数结果
-2.有参无返
-void test2(int a)&#123;&#125;;输出只需要输入test2(100)即可输出该函数结果
-3.无参有返
-int test3()&#123;return100&#125;;输出只需要输入test3()即可输出该函数结果，还会输出return的返回值100
-4.有参有返
-int test4(int a)&#123;return 100&#125;;输出只需呀输入test4(1000)即可输出该函数结果，还会输出return的返回值100
-函数的声明：
-函数可以声明多次，但只能定义一次；
-函数的份文件编写：
-1.创建后缀名为.h的头文件；2.创建后缀名为.cpp的源文件；3.在头文件中写函数的声明以及##include&lt;iostream&gt;using namespace std；4.在源文件中写函数的定义以及##include &quot;头文件.h&quot;双引号表示用户自定义的头文件；
-*/
-/*指针！！！（指针就是地址）
-指针的作用：可以通过指针间接的访问内存。
-指针定义的语法：数据类型*指针变量名。
-使用指针：可以通过解引用的方式来找到指针所指向的内存，解引用即指针前加一个星号*。   int a = 20;  int *p = &amp;a;  那么若cout&lt;&lt;*p;输出的是a的值。
-指针所占用的内存空间：指针也是一种数据类型，指针在32位操作系统下占用4个字节，在64位操作系统下占用8个字节。
-空指针：空指针用于给指针变量进性初始化，空指针是不可以访问的。 int *p =NULL;(NULL即代表空，是系统所占用编号为0~255号内存，不允许用户访问)。
-野指针：即指针指向了非法的内存空间，直接将指针定义为一个内存空间。int *p = (int)0x1100.
-const修饰指针：const可以修饰常量，也可以修饰指针，也可以既修饰常量又修饰指针。
-                         常量指针的特点：可以改变指针的方向，但不可以改变指针指向的值。 const  *p = &amp;a;
-                         指针常量的特点：指针的指向不可以改，但指针指向的值可以改。       int const *p = &amp;a;
-                         既修饰指针又修饰常量的特点：指针的指向和指针所指向的值都不可以改。const int * const p = &amp;a;
-指针和数组：int arr[10] = &#123;1,2,3,4,5,6,7,8,9,10&#125;; int *p=arr; cout&lt;&lt;p；即可输出数组的地址，cout&lt;&lt;*p；即可输出数组的第一个元素，p++，cout&lt;&lt;*p；即可输出数组中的第二个元素。
-指针和函数：值传递：就是把main里面定义的实参传到函数的形参里
-                    地址传递：函数里定义的变量为：*p，main里面要传过去的变量则应该为&amp;a
-指针和函数和数组：void bubblesort(int *arr,int len)或者void bubblesort(int arr[],int len);这里的*arr和arr[]是一样的。
-*/
-/*结构体！！！
-结构体基本概念：结构体属于用户自己定义的数据类型，允许用户存储不同的数据类型
-结构体的定义和使用：struct 结构体名&#123;结构体成员列表&#125;；
-结构体创建变量的三种方式：1.struct 结构体名 变量名；2.struct 结构体名 变量名=&#123;成员1值，成员2值...&#125;；3.定义结构体是顺便创建变量
-结构体数组：struct 结构体名 数组名[元数个数] = &#123;&#123;&#125;，&#123;&#125;，&#123;&#125;...&#125;；(用逗号分割)
-结构体指针：先创建一个结构体变量，例如，struct student s =&#123;姓名，年龄，分数&#125;。创建指针，struct *p = &s; 利用指针访问结构体变量，cout<<p->年龄或姓名或分数.或者(*p).年龄或姓名或分数
-结构体嵌套结构体：例如struct student,struct teacher，若要在teacher中嵌套student，必须要在teacher前先定义一个student，若要访问teacher中的student里面的元素，应该写teacher.student.学生中的属性。
-结构体作函数参数：值传递：函数的声明为：void printstudent(struct student s)，函数的调用为printstudent(s);在调用前必定已经创建了名为s的结构体。
-                              地址传递：函数的声明为：void printstudent(struct student *s)，函数的调用为printstudent(&s);在调用前必定已经创建了名为s的结构体。
-结构体中const使用的场景：运用于函数与结构体与指针的应用中，为了节省内存，通常会在函数的形参中定义为结构体指针，为了不修改结构体中的数据，又在形参前加上了const。
-*/
-
-
-```
-
-
-
-## 程序的内存模型：
-
-
-
-```
-
+                <h2 id="C-基础："><a href="#C-基础：" class="headerlink" title="C++基础："></a>C++基础：</h2><p>aaa</p>
+<h2 id="程序的内存模型："><a href="#程序的内存模型：" class="headerlink" title="程序的内存模型："></a>程序的内存模型：</h2><pre><code>
 1、内存分区模型
 ·代码区：存放函数体的二进制代码，由操作系统进行管理的
         存放CPU执行的机器命令
@@ -684,17 +522,8 @@ const修饰指针：const可以修饰常量，也可以修饰指针，也可以�
 
 程序运行前分为：代码区和全局区
 程序运行后分为：栈区和堆区
-
-```
-
-
-
-## 函数高级：
-
-
-
-```
-1、函数默认参数
+</code></pre>
+<h2 id="函数高级："><a href="#函数高级：" class="headerlink" title="函数高级："></a>函数高级：</h2><pre><code>1、函数默认参数
       在C++中，函数肚饿形参列表中的形参是可以有默认值的
       例：int func(int a, int b =10);
       但如果我们仍对已经有默认值的形参传入数值，则会使用我们传入的数值。
@@ -714,16 +543,8 @@ const修饰指针：const可以修饰常量，也可以修饰指针，也可以�
          ·函数重载碰到函数默认参数
           若函数参数中有默认参数，则有可能发生二义性，即，函数不能正常调用
           
-```
-
-
-
-## 类和对象：
-
-
-
-```
-
+</code></pre>
+<h2 id="类和对象："><a href="#类和对象：" class="headerlink" title="类和对象："></a>类和对象：</h2><pre><code>
 C++面向对象的三大特性：封装，继承，多态
 
 C++认为万事万物皆为对象，对象上有其行为和属性、具有相同性质的对象，我们可以抽象为类
@@ -781,7 +602,7 @@ C++认为万事万物皆为对象，对象上有其行为和属性、具有相�
             构造函数的分类及调用：
                两种分类方式：
                     按参数分为：有参构造和无参构造，（即，Person()&#123;&#125;,     Person(int age)&#123;&#125;）
-                    按类型分为：普通构造和拷贝构造，（普通构造，即上边的有参构造和无参构造。拷贝构造：Person(const Person &p)&#123;&#125;）
+                    按类型分为：普通构造和拷贝构造，（普通构造，即上边的有参构造和无参构造。拷贝构造：Person(const Person &amp;p)&#123;&#125;）
                三种通用方式：
                     括号法：Person p;//调用了无参构造。。Person p2(10);//调用了有参构造。。Person p3(p2);//调用了拷贝构造函数
                     注：在调用默认构造函数时不要加上()；因为例如：Person p();没有参数，将会被认为是函数的声明
