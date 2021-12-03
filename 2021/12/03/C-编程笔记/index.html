@@ -5,13 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="C++编程笔记, JJH">
-    <meta name="description" content="C++基础：include&amp;lt;iostream&amp;gt;
-
-using namespace std;
-int main
-&amp;#123;
-/*生成随机数！！！
-调用rand()将生成一个介于0和RAND_MAX之间的随机整数(RAND_MAX">
+    <meta name="description" content="C++基础：/*生成随机数！！！
+调用rand()将生成一个介于0和RAND_MAX之间的随机整数(RAND_MAX是一个与实现有关的常量)，再次调用rand()会得到一个不同的数字。
+rand函数在&amp;lt;cstdlib&amp;gt;头文件中声">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -493,12 +489,7 @@ int main
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="C-基础："><a href="#C-基础：" class="headerlink" title="C++基础："></a>C++基础：</h1><pre><code>include&lt;iostream&gt;
-
-using namespace std;
-int main
-&#123;
-/*生成随机数！！！
+                <h1 id="C-基础："><a href="#C-基础：" class="headerlink" title="C++基础："></a>C++基础：</h1><pre><code>/*生成随机数！！！
 调用rand()将生成一个介于0和RAND_MAX之间的随机整数(RAND_MAX是一个与实现有关的常量)，再次调用rand()会得到一个不同的数字。
 rand函数在&lt;cstdlib&gt;头文件中声明。
 使用srand()函数设置种子，通常会设置srand(time(0));但应声明time函数的头文件：&lt;ctime&gt;。就可以生成一个真正意义上的随机数。
@@ -651,14 +642,13 @@ const修饰指针：const可以修饰常量，也可以修饰指针，也可以�
                               地址传递：函数的声明为：void printstudent(struct student *s)，函数的调用为printstudent(&s);在调用前必定已经创建了名为s的结构体。
 结构体中const使用的场景：运用于函数与结构体与指针的应用中，为了节省内存，通常会在函数的形参中定义为结构体指针，为了不修改结构体中的数据，又在形参前加上了const。
 */
-system("pause");
-return 0;
-&#125;
 ```
 
 
 
 # 程序的内存模型：
+
+
 
 ```
 1、内存分区模型
@@ -691,7 +681,11 @@ return 0;
 程序运行后分为：栈区和堆区
 ```
 
+
+
 # 函数高级：
+
+
 
 ```
 1、函数默认参数
@@ -715,7 +709,11 @@ return 0;
           若函数参数中有默认参数，则有可能发生二义性，即，函数不能正常调用
 ```
 
+
+
 # 类和对象：
+
+
 
 ```
 C++面向对象的三大特性：封装，继承，多态
